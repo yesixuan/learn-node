@@ -14,4 +14,6 @@ exports.xx = xx
 npm login // 登录npm
 npm whoami // 告诉你当前登录用户是谁
 npm publish // 不成功，原因未知
-npm unpublish --force // 删除发布的东西（每个版本都得删） 
+npm unpublish --force // 删除发布的东西（每个版本都得删）
+#### 填坑
+之前publish一直都是失败，原因是之前设置了淘宝的源，以及需要重新登录npm的帐号
