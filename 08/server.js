@@ -7,6 +7,8 @@ const multer = require('multer')
 const consolidate = require('consolidate')
 const mysql = require('mysql')
 
+const common = require('./libs/common')
+
 // 使用连接池而不是创建连接，以提高性能（会创建多个链接，以保持跟数据库的持久通话）
 const db = mysql.createPool({
   host: 'localhost',
@@ -65,9 +67,25 @@ server.get('/', (req, res, next) => {
 server.get('/', (req, res) => {
   res.render('index.ejs', {banners: res.banners, articles: res.articles})
 })
-server.get('/conText', (req, res, next) => {
+server.get('/conText', (req, res) => {
   // res.render('conText.ejs', {})
-  db.query('select ')
+  if(req.query.id) {
+    db.query(`select * from article_table where ID=${req.query.id}`, (err, data) => {
+      if(err) {
+        res.status(500).send('查询数据库出错！').end()
+      }else {
+        if(data.length == 0) {
+          res.status(404).send('文章不存在！').end()
+        }else {
+          var articleData = data[0]
+          articleData.sDate = common.time2Date(articleData.post_time)
+          res.render('conText.ejs', {article_data: articleData})
+        }
+      }
+    })
+  }else {
+    res.status(404).send('文章不存在！').end()
+  }
 })
 
 // 4. 静态数据
