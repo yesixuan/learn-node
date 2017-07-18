@@ -7,9 +7,9 @@
 - write()不能直接发送json到浏览器，而send()可以
 
 ## express方法
-get('/xx', (req, res) => {})
-post('/xx', (req, res) => {})
-use('/xx', (req, res) => {}) // 这个通吃
+get('/xx', (req, res) => {})  
+post('/xx', (req, res) => {})  
+use('/xx', (req, res) => {}) // 这个通吃  
 回调函数还有第三个参数next，表示即使已经匹配上，也要继续往下走
 
 ## express提供静态服务

@@ -7,13 +7,13 @@
 ### 自定义模块
 所有模块中的代码，都将被nodejs包在`(function(require, exports, module){})`
 #### 暴露模块
-要暴露东西，必须要将其挂到exports对象上去
-exports.xx = xx
+要暴露东西，必须要将其挂到exports对象上去  
+exports.xx = xx  
 如果到对外输出一堆东西，要使用module.exports = {}
 ### npm
-npm login // 登录npm
-npm whoami // 告诉你当前登录用户是谁
-npm publish // 不成功，原因未知
-npm unpublish --force // 删除发布的东西（每个版本都得删）
+npm login // 登录npm  
+npm whoami // 告诉你当前登录用户是谁  
+npm publish // 不成功，原因未知  
+npm unpublish --force // 删除发布的东西（每个版本都得删） 
 #### 填坑
 之前publish一直都是失败，原因是之前设置了淘宝的源，以及需要重新登录npm的帐号

@@ -7,7 +7,7 @@
 
 ## session
 ### 定义
-保存数据，保存在服务端。
+保存数据，保存在服务端。  
 session是依托于cookie存在的。
 ### 简单的session流转过程
 1. 浏览器给服务器空的的cookie
@@ -16,7 +16,7 @@ session是依托于cookie存在的。
 4. 服务器根据ID知道来者何人
 
 ### session劫持
-别人拿到你的sessionID，种到自己的cookie中，就可以以你的身份来做一些事情。
+别人拿到你的sessionID，种到自己的cookie中，就可以以你的身份来做一些事情。  
 预防措施：cookie加密、更换sessionID。
 
 ## express中的cookie
